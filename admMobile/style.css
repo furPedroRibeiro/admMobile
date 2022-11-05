@@ -34,6 +34,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    flex-wrap: wrap;
 }
 .content .left{
     display: flex;
@@ -86,4 +88,59 @@ button{
     height: 60vh;
 
     border-right: 1px solid var(--corSecundaria);
+}
+.adm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  gap: 3vh;
+}
+.adm .form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  gap: 3vh;
+}
+input{
+  width: 30vw;
+  height: 3.5vh;
+  outline: none;
+  border: 1px solid var(--corSecundaria);
+
+  padding: 10px;
+}
+input::placeholder{
+  color: var(--corSecundaria);
+  font-size: 17px;
+}
+.buttonForm{
+  width: 30vw;
+  height: 5.5vh;
+  border: 1px solid var(--corSecundaria);
+
+  background-color: white;
+  color: var(--corSecundaria);
+
+  font-size: 18px;
+
+  box-shadow: 5px 5px 4px rgb(129, 63, 206);
+}
+.forms{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 7vh;
+
+  margin-top: 10vh;
+}
+#text{
+  color: var(--corSecundaria);
 }

@@ -3,9 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  overflow-x: hidden;
+  color: var(--corSecundaria);
+}
 :root{
-  --corPrimaria: rgb(0, 0, 0);
+  --corPrimaria: rgb(255, 255, 255);
   --corSecundaria: rgb(138, 92, 192);
+}
+#textDefault{
+  color: var(--corSecundaria);
+  font-size: 22px;
+  font-weight: 450;
 }
 .header {
   background-color: white;
@@ -37,6 +46,15 @@ a {
 
     flex-wrap: wrap;
 }
+.tamHeight{
+  height: 88vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+}
 .content .left{
     display: flex;
     flex-direction: column;
@@ -64,7 +82,7 @@ a {
     color: var(--corSecundaria);
     font-size: 23px;
 }
-button{
+.content button{
     width: 30vw;
     height: 7vh;
     border: 1px solid var(--corSecundaria);
@@ -75,6 +93,13 @@ button{
     font-size: 18px;
 
     box-shadow: 5px 5px 4px rgb(129, 63, 206);
+
+    transition: width 1s;
+}
+.content button:hover{
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+  width: 35vw;
 }
 .content .rigth{
     display: flex;
@@ -98,6 +123,27 @@ button{
 
   gap: 3vh;
 }
+.btnModal{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--corSecundaria);
+
+    background-color: white;
+    color: var(--corSecundaria);
+
+    font-size: 30px;
+    font-weight: 300;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 5px 5px 4px rgb(129, 63, 206);
+}
+.btnModal:hover{
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+}
 .adm .form{
   display: flex;
   justify-content: center;
@@ -114,6 +160,11 @@ input{
   border: 1px solid var(--corSecundaria);
 
   padding: 10px;
+
+  transition: width 1s;
+}
+input:focus{
+  width: 35vw;
 }
 input::placeholder{
   color: var(--corSecundaria);
@@ -130,6 +181,13 @@ input::placeholder{
   font-size: 18px;
 
   box-shadow: 5px 5px 4px rgb(129, 63, 206);
+
+  transition: width 1s;
+}
+.buttonForm:hover{
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+  width: 35vw;
 }
 .forms{
   display: flex;
@@ -141,6 +199,80 @@ input::placeholder{
 
   margin-top: 10vh;
 }
+form select{
+  width: 30vw;
+  height: 3.5vh;
+  outline: none;
+  border: 1px solid var(--corSecundaria);
+
+  color: var(--corSecundaria);
+
+  transition: width 1s;
+}
+form select:focus{
+  width: 35vw;
+}
 #text{
   color: var(--corSecundaria);
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  width: 100vw;
+  gap: 2vh;
+  padding: 2rem;
+}
+
+.footer #textFooter{
+  color: var(--corSecundaria);
+  font-size: 22px;
+  font-weight: 450;
+}
+.footer .icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 12rem;
+}
+#labelForm{
+  font-size: 18px;
+  color: var(--corSecundaria);
+  font-weight: 400;
+}
+textarea{
+  resize: none;
+  width: 30vw;
+  height: 25vh;
+
+  border: 1px solid var(--corSecundaria);
+
+  transition: width 1s;
+
+  outline: none;
+}
+textarea:focus{
+  width: 35vw;
+}
+textarea::placeholder{
+  color: var(--corSecundaria);
+  font-size: 17px;
+}
+#fileToUpload{
+  width: 30vw;
+  height: auto;
+  outline: none;
+  border: 1px solid var(--corSecundaria);
+
+  padding: 10px;
+
+  transition: width 1s;
+}
+#fileToUpload:focus{
+  width: 35vw;
 }

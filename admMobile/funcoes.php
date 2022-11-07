@@ -45,16 +45,14 @@
     $sql = 'SELECT * FROM categoria';
     $res = $GLOBALS['conn']->query($sql);
 
-    echo '{"Categorias":[';
     if($res -> num_rows > 0){
       while($row = $res->fetch_assoc()){
-        $arr = array('Codigo' => $row['cd'], 'Categoria' => $row['nome']);
+        $myObj = '{codigo: '.$row['cd'].', categoria:"'.$row['nome'].'"}';
 
-        $myJSON = json_encode($arr);
+        $myJSON = json_encode($myObj);
 
         echo $myJSON;
       }
     }
-    echo ']}';
   }
 ?>

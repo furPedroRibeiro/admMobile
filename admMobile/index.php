@@ -101,6 +101,7 @@
                         ?>
                     </select>
                     <textarea name="descProduto" id="descProduto" cols="30" rows="10" placeholder="Descrição do produto"></textarea>
+                    <label for="fileToUpload"><h3 id="labelForm">Foto do produto:</h3></label>
                     <input type="file" name="fileToUpload" id="fileToUpload">
                     <input type="url" id="linkProd" name="linkProd" placeholder="Link do instagram:">
                     <input type="text" id="nomeProd" name="nomeProd" placeholder="Digite o nome do produto:">
@@ -126,12 +127,12 @@
                     ?>
                 </form>
                 <!-- Button trigger modal -->
-                <button type="button" class="buttonForm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="buttonForm" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                     Ver produtos
                 </button>
   
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -155,9 +156,9 @@
     <div class="footer">
             <h3 id="textFooter">We are bests</h3>
         <div class="icons">
-            <img src="img/whatsapp.png" alt="" width="25px">
-            <img src="img/logotipo-do-instagram.png" alt="" width="25px">
-            <img src="img/pincel-de-arte.png" alt="" width="25px">
+            <a href=""><img src="img/whatsapp.png" alt="" width="25px"></a>
+            <a href=""><img src="img/logotipo-do-instagram.png" alt="" width="25px"></a>
+            <a href=""><img src="img/pincel-de-arte.png" alt="" width="25px"></a>
         </div>
     </div>
 </body>

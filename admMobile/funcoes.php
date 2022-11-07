@@ -18,6 +18,22 @@
       echo 'Erro ao cadastrar categoria';
     }
   }
+  function MostrarCategorias(){
+    $sql = 'SELECT * FROM categoria';
+    $res = $GLOBALS['conn']->query($sql);
+
+    if($res -> num_rows > 0){
+      while($row = $res->fetch_assoc()){
+        echo '
+              <div class="card">
+                <h3 id="textDefault">Código:'.$row['cd'].'</h3>
+                <h3 id="textDefault">Categoria:'.$row['nome'].'</h3>
+                <a href=""><img src="img/lixeira.png" width="25px"/></a>
+              </div>
+        ';
+      }
+    }
+  }
   function MostrarCategoriaSelect(){
     $sql = 'SELECT * FROM categoria';
     $res = $GLOBALS['conn']->query($sql);

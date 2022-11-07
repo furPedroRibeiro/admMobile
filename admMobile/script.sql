@@ -24,6 +24,7 @@ CREATE TABLE produto(
     cd_categoria INT NOT NULL,
 	ds_produto VARCHAR(100),
 	valor DECIMAL(5,2),
+	imagem VARCHAR(45), 
 	link VARCHAR(20),
     FOREIGN KEY (cd_categoria) REFERENCES categoria(cd),
 	PRIMARY KEY (cd_produto)

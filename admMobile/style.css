@@ -86,8 +86,8 @@ a {
     color: var(--corSecundaria);
     font-size: 23px;
 }
-.content button{
-    width: 30vw;
+.content .btnContent{
+    width: 27vw;
     height: 7vh;
     border: 1px solid var(--corSecundaria);
 
@@ -98,12 +98,12 @@ a {
 
     box-shadow: 5px 5px 4px rgb(129, 63, 206);
 
-    transition: width 1s;
+    transition: width 1.1s;
 }
-.content button:hover{
+.content .btnContent:hover{
   background-color: var(--corSecundaria);
   color: var(--corPrimaria);
-  width: 35vw;
+  width: 30vw;
 }
 .content .rigth{
     display: flex;
@@ -148,7 +148,7 @@ a {
   background-color: var(--corSecundaria);
   color: var(--corPrimaria);
 }
- .form{
+form{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,6 +156,32 @@ a {
   flex-direction: column;
 
   gap: 3vh;
+}
+ .formEdit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  gap: 3vh;
+}
+.formEdit input{
+  width: 20rem;
+  height: 3.5vh;
+  outline: none;
+  border: 1px solid var(--corSecundaria);
+
+  padding: 10px; 
+
+  transition: width 1s;
+}
+.formEdit input:focus{
+  width: 22rem;
+}
+.formEdit input::placeholder{
+  color: var(--corSecundaria);
+  font-size: 17px;
 }
 input{
   width: 30vw;
@@ -193,6 +219,25 @@ input::placeholder{
   color: var(--corPrimaria);
   width: 35vw;
 }
+.buttonFormEdit{
+  width: 20rem;
+  height: 5.5vh;
+  border: 1px solid var(--corSecundaria);
+
+  background-color: white;
+  color: var(--corSecundaria);
+
+  font-size: 18px;
+
+  box-shadow: 5px 5px 4px rgb(129, 63, 206);
+
+  transition: width 1s;
+}
+.buttonFormEdit:hover{
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+  width: 22rem;
+}
 .forms{
   display: flex;
   flex-direction: column;
@@ -215,6 +260,19 @@ form select{
 }
 form select:focus{
   width: 35vw;
+}
+.formEdit select{
+  width: 20rem;
+  height: 3.5vh;
+  outline: none;
+  border: 1px solid var(--corSecundaria);
+
+  color: var(--corSecundaria);
+
+  transition: width 1s;
+}
+.formEdit select:focus{
+  width: 22rem;
 }
 #text{
   color: var(--corSecundaria);
@@ -291,6 +349,8 @@ textarea::placeholder{
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  width: 22rem;
 
   gap: 0.5vh;
   padding: 1rem;

@@ -44,7 +44,7 @@
                 <h1 id="title">Seja bem vindo</h1>
                 <h4 id="text">ao nosso programa de administração da marca Pedro arT, aproveite a experiência e administre com sabedoria, quaisquer dúvidas reclamações ou requerimentos favor entrar em contato com nosso desenvolvedor. Lembre-se, quem tem cu tem medo!!!</h3>
                 <a href="">
-                    <button>Contato</button>
+                    <button class="btnContent">Contato</button>
                 </a>
             </div>
         </div>
@@ -79,17 +79,52 @@
                             <h5 class="modal-title" id="textDefault">Categorias</h5>
                             <button type="button" class="btnModal" data-bs-dismiss="modal" aria-label="Close">X</button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body" style="display: flex; justify-content: center; flex-direction: column; align-items: center; gap: 0.7rem">
                                 <?php
                                     MostrarCategorias();
                                 ?>
+                                <div class="editar" id="editarCat">
+                                <h3 id="text">Editar categoria:</h3>
+                                <form action="" method="post" class="formEdit">
+                                    <label for="catEdit"><h3 id="labelForm">Categoria:</h3></label>
+                                    <select name="catEdit" id="catEdit">
+                                        <?php
+                                            MostrarCategoriaSelect();
+                                        ?>
+                                    </select>
+                                    <input type="text" id="nomeCatEdit" name="nomeCatEdit" placeholder="Digite o novo nome da categoria:">
+                                    <button type="submit" class="buttonForm" name="">Enviar</button>
+                                    <?php
+                                        if(isset($_POST['nomeCatEdit'])){
+                                            EditarCategoria($_POST['catEdit'], $_POST['nomeCatEdit']);
+                                        } else{}
+                                    ?>
+                                </form>
+                                <div class="editar" id="editarCat">
+                                    <h3 id="text">Editar categoria:</h3>
+                                    <form action="" method="post" class="formEdit">
+                                        <label for="catEdit"><h3 id="labelForm">Categoria:</h3></label>
+                                        <select name="catEdit" id="catEdit">
+                                            <?php
+                                                MostrarCategoriaSelect();
+                                            ?>
+                                        </select>
+                                        <input type="text" id="nomeCatEdit" name="nomeCatEdit" placeholder="Digite o novo nome da categoria:">
+                                        <button type="submit" class="buttonFormEdit" name="">Enviar</button>
+                                        <?php
+                                            if(isset($_POST['nomeCatEdit'])){
+                                                EditarCategoria($_POST['catEdit'], $_POST['nomeCatEdit']);
+                                            } else{}
+                                        ?>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="adm">
-                <a href="#textFooter"><h3 id="text">Cadastrar produto:</h3></a>
+                <a><h3 id="text">Cadastrar produto:</h3></a>
                 <form action="" method="post" class="form">
                     <label for="catProduto"><h3 id="labelForm">Categoria do produto:</h3></label>
                     <select name="catProduto" id="catProduto">
@@ -139,39 +174,6 @@
                             <div class="modal-body">
                                 <?php
                                     /*MostrarProdutos();*/
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="editar" id="editarCat">
-                <h3 id="text">Editar categoria de produto:</h3>
-                <form action="" method="post" class="form">
-                    <input type="text" id="nomeCat" name="nomeCat" placeholder="Digite o nome da categoria:">
-                    <button type="submit" class="buttonForm">Enviar</button>
-                    <?php
-                        if(isset($_POST['nomeCat'])){
-                            EditarCategoria($_POST['nomeCat']);
-                        } else{}
-                    ?>
-                </form>
-                <!-- Button trigger modal -->
-            <button type="button" class="buttonForm" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                    Ver categorias
-                </button>
-  
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="textDefault">Categorias</h5>
-                            <button type="button" class="btnModal" data-bs-dismiss="modal" aria-label="Close">X</button>
-                            </div>
-                            <div class="modal-body">
-                                <?php
-                                    MostrarCategorias();
                                 ?>
                             </div>
                         </div>

@@ -13,19 +13,27 @@
     $res = $GLOBALS['conn']->query($sql);
 
     if($res){
-      echo '<h3 id="textDefault">Categoria cadastrada com sucesso!!!</h3>';
+      echo '<script>
+        alert("Categoria cadastrada com sucesso!!");
+      </script>';
     } else{
-      echo 'Erro ao cadastrar categoria';
+      echo '<script>
+        alert("Erro ao cadastrar categoria");
+      </script>';
     }
   }
-  function EditarCategoria($name){
-    $sql = 'UPDATE categoria SET nome = "'.$name.'" WHERE cd ='.$_SESSION['cdEdit'];
+  function EditarCategoria($cat, $name){
+    $sql = 'UPDATE categoria SET nome = "'.$name.'" WHERE cd ='.$cat;
     $res = $GLOBALS['conn']->query($sql);
 
     if($res){
-      echo '<h3 id="textDefault">Categoria editada com sucesso!!!</h3>';
+      echo '<script>
+        alert("Categoria editada com sucesso!!");
+      </script>';
     } else{
-      echo 'Erro ao editar categoria';
+      echo '<script>
+        alert("Erro ao editar categoria");
+      </script>';
     }
   }
   function MostrarCategorias(){
@@ -35,22 +43,20 @@
     if($res -> num_rows > 0){
       while($row = $res->fetch_assoc()){
         echo '
-              <div class="card1">
-                <h3 id="textDefault">Código:'.$row['cd'].'</h3>
-                <h3 id="textDefault">Categoria:'.$row['nome'].'</h3>
-                <span>
-                  <a href="index.php?cdforremove='.$row['cd'].'"><img src="img/lixeira.png" width="25px"/></a>
-                  <a href="index.php?cdforedit='.$row['cd'].'"><img src="img/escrever.png" width="25px"/></a>
-                </span>
-              </div>
+        <div class="card1">
+        <h3 id="textDefault">Código: '.$row['cd'].'</h3>
+        <h3 id="textDefault">Categoria: '.$row['nome'].'</h3>
+        <span>
+          <script>
+            function editarCat(){
+              document.getElementById("editarCat").style.display = "flex";
+            }
+          </script>
+          <a href="index.php"><img src="img/lixeira.png" width="25px"/></a>
+          <a onclick="editarCat()" href="#editarCat"><img src="img/escrever.png" width="25px"/></a>
+        </span>
+      </div>
         ';
-      }
-      if(isset($_GET['cdforedit'])){
-        $_SESSION['cdEdit'] = $_GET['cdforedit'];
-        echo '<script>
-          document.getElementByClass("editar").style.display = "flex";
-        </script>';
-        header('location: index.php#editarCat');
       }
     }
   }
@@ -72,9 +78,13 @@
     $sql = 'INSERT INTO produto(cd_categoria, cd_produto, ds_produto, imagem, link, nome, valor) VALUES ("'.$cdCat.'", null, "'.$descProd.'", "'.$imagem.'", "'.$link.'", "'.$nome.'", "'.$valor.'")';
     $res = $GLOBALS['conn']->query($sql);
     if($res){
-      echo '<h3 id="textDefault">Produto cadastrado com sucesso!!!</h3>';
+      echo '<script>
+        alert("Produto cadastrado com sucesso");
+      </script>';
     } else{
-      echo 'Erro ao cadastrar produto';
+      echo '<script>
+        alert("Erro ao cadastrar produto");
+      </script>';
     }
   }
   function JsonCategoria(){

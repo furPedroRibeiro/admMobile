@@ -18,6 +18,16 @@
       echo 'Erro ao cadastrar categoria';
     }
   }
+  function EditarCategoria($name){
+    $sql = 'UPDATE categoria SET nome = "'.$name.'" WHERE cd ='.$_SESSION['cdEdit'];
+    $res = $GLOBALS['conn']->query($sql);
+
+    if($res){
+      echo '<h3 id="textDefault">Categoria editada com sucesso!!!</h3>';
+    } else{
+      echo 'Erro ao editar categoria';
+    }
+  }
   function MostrarCategorias(){
     $sql = 'SELECT * FROM categoria';
     $res = $GLOBALS['conn']->query($sql);
@@ -25,12 +35,22 @@
     if($res -> num_rows > 0){
       while($row = $res->fetch_assoc()){
         echo '
-              <div class="card">
+              <div class="card1">
                 <h3 id="textDefault">Código:'.$row['cd'].'</h3>
                 <h3 id="textDefault">Categoria:'.$row['nome'].'</h3>
-                <a href=""><img src="img/lixeira.png" width="25px"/></a>
+                <span>
+                  <a href="index.php?cdforremove='.$row['cd'].'"><img src="img/lixeira.png" width="25px"/></a>
+                  <a href="index.php?cdforedit='.$row['cd'].'"><img src="img/escrever.png" width="25px"/></a>
+                </span>
               </div>
         ';
+      }
+      if(isset($_GET['cdforedit'])){
+        $_SESSION['cdEdit'] = $_GET['cdforedit'];
+        echo '<script>
+          document.getElementByClass("editar").style.display = "flex";
+        </script>';
+        header('location: index.php#editarCat');
       }
     }
   }

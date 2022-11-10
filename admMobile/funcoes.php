@@ -13,13 +13,9 @@
     $res = $GLOBALS['conn']->query($sql);
 
     if($res){
-      echo '<script>
-        alert("Categoria cadastrada com sucesso!!");
-      </script>';
+      echo '<h3 id="textDefault">Categoria cadastrada</h3>';
     } else{
-      echo '<script>
-        alert("Erro ao cadastrar categoria");
-      </script>';
+      echo '<h3 id="textDefault">Erro ao cadastrar categoria</h3>';
     }
   }
   function EditarCategoria($cat, $name){
@@ -27,13 +23,9 @@
     $res = $GLOBALS['conn']->query($sql);
 
     if($res){
-      echo '<script>
-        alert("Categoria editada com sucesso!!");
-      </script>';
+      echo '<h3 id="textDefault">Categoria editada</h3>';
     } else{
-      echo '<script>
-        alert("Erro ao editar categoria");
-      </script>';
+      echo '<h3 id="textDefault">Erro ao editar categoria</h3>';
     }
   }
   function MostrarCategorias(){

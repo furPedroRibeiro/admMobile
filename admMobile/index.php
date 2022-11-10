@@ -79,10 +79,13 @@
                             <h5 class="modal-title" id="textDefault">Categorias</h5>
                             <button type="button" class="btnModal" data-bs-dismiss="modal" aria-label="Close">X</button>
                             </div>
-                            <div class="modal-body" style="display: flex; justify-content: center; flex-direction: column; align-items: center; gap: 0.7rem">
+                            <div class="modal-body"  style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+                                
+                            <h3 onclick="window.location.reload()" id="textDefault" style="text-decoration: underline; cursor: pointer">Atualizar<h3>
                                 <?php
                                     MostrarCategorias();
                                 ?>
+                                
                                 <div class="editar" id="editarCat">
                                 <h3 id="text">Editar categoria:</h3>
                                 <form action="" method="post" class="formEdit">
@@ -104,13 +107,13 @@
                                     <h3 id="text">Editar categoria:</h3>
                                     <form action="" method="post" class="formEdit">
                                         <label for="catEdit"><h3 id="labelForm">Categoria:</h3></label>
-                                        <select name="catEdit" id="catEdit">
+                                        <select class="formEditTamanho" name="catEdit" id="catEdit">
                                             <?php
                                                 MostrarCategoriaSelect();
                                             ?>
                                         </select>
-                                        <input type="text" id="nomeCatEdit" name="nomeCatEdit" placeholder="Digite o novo nome da categoria:">
-                                        <button type="submit" class="buttonFormEdit" name="">Enviar</button>
+                                        <input class="formEditTamanho" type="text" id="nomeCatEdit" name="nomeCatEdit" placeholder="Digite o novo nome da categoria:">
+                                        <button type="submit" class="buttonFormEdit" name="" >Enviar</button>
                                         <?php
                                             if(isset($_POST['nomeCatEdit'])){
                                                 EditarCategoria($_POST['catEdit'], $_POST['nomeCatEdit']);

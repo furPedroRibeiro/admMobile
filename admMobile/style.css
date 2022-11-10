@@ -157,32 +157,6 @@ form{
 
   gap: 3vh;
 }
- .formEdit{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-direction: column;
-
-  gap: 3vh;
-}
-.formEdit input{
-  width: 20rem;
-  height: 3.5vh;
-  outline: none;
-  border: 1px solid var(--corSecundaria);
-
-  padding: 10px; 
-
-  transition: width 1s;
-}
-.formEdit input:focus{
-  width: 22rem;
-}
-.formEdit input::placeholder{
-  color: var(--corSecundaria);
-  font-size: 17px;
-}
 input{
   width: 30vw;
   height: 3.5vh;
@@ -219,25 +193,6 @@ input::placeholder{
   color: var(--corPrimaria);
   width: 35vw;
 }
-.buttonFormEdit{
-  width: 20rem;
-  height: 5.5vh;
-  border: 1px solid var(--corSecundaria);
-
-  background-color: white;
-  color: var(--corSecundaria);
-
-  font-size: 18px;
-
-  box-shadow: 5px 5px 4px rgb(129, 63, 206);
-
-  transition: width 1s;
-}
-.buttonFormEdit:hover{
-  background-color: var(--corSecundaria);
-  color: var(--corPrimaria);
-  width: 22rem;
-}
 .forms{
   display: flex;
   flex-direction: column;
@@ -260,19 +215,6 @@ form select{
 }
 form select:focus{
   width: 35vw;
-}
-.formEdit select{
-  width: 20rem;
-  height: 3.5vh;
-  outline: none;
-  border: 1px solid var(--corSecundaria);
-
-  color: var(--corSecundaria);
-
-  transition: width 1s;
-}
-.formEdit select:focus{
-  width: 22rem;
 }
 #text{
   color: var(--corSecundaria);
@@ -310,6 +252,7 @@ textarea{
   resize: none;
   width: 30vw;
   height: 25vh;
+  padding: 1rem;
 
   border: 1px solid var(--corSecundaria);
 
@@ -354,13 +297,73 @@ textarea::placeholder{
 
   gap: 0.5vh;
   padding: 1rem;
+
+  margin-top: 1rem;
 }
 .editar{
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
 
   flex-direction: column;
 
   gap: 3vh;
+}
+.formEdit select{
+  width: 20rem;
+  height: 3.5vh;
+  outline: none;
+  border: 1px solid var(--corSecundaria);
+
+  color: var(--corSecundaria);
+
+  transition: width 1s;
+}
+.formEdit select:focus{
+  width: 22rem;
+}
+.buttonFormEdit{
+  width: 20rem;
+  height: 5.5vh;
+  border: 1px solid var(--corSecundaria);
+
+  background-color: white;
+  color: var(--corSecundaria);
+
+  font-size: 18px;
+
+  box-shadow: 5px 5px 4px rgb(129, 63, 206);
+
+  transition: width 1s;
+}
+.buttonFormEdit:hover{
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+  width: 22rem;
+}
+.formEdit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  gap: 3vh;
+}
+.formEdit input{
+  width: 30vw;
+  height: 3.5vh;
+  outline: none;
+  border: 1px solid var(--corSecundaria);
+
+  padding: 10px;
+
+  transition: width 1s;
+}
+.formEdit input:focus{
+  width: 22rem;
+}
+.formEdit input::placeholder{
+  color: var(--corSecundaria);
+  font-size: 17px;
 }

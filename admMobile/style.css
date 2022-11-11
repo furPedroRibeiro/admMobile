@@ -1,3 +1,5 @@
+/* CSS geral */
+
 *{
   margin: 0;
   padding: 0;
@@ -16,6 +18,18 @@ body{
   font-size: 22px;
   font-weight: 450;
 }
+#tituloDefault{
+  color: var(--corSecundaria);
+  font-size: 35px;
+  font-weight: 1000;
+}
+a {
+  text-decoration: none;
+  color: var(--corSecundaria);
+}
+
+/* CSS do header */
+
 .header {
   background-color: white;
   color: var(--corSecundaria);
@@ -31,194 +45,232 @@ body{
   text-decoration: none;
   color: var(--corSecundaria);
 }
-a {
-  text-decoration: none;
-  color: var(--corSecundaria);
-}
 #textLogo {
   font-family: 'Freehand', cursive;
   font-size: 27px;
   font-weight: 450;
 }
+
+/* CSS do content */
+
 .content{
-    height: 88vh;
-    width: 100vw;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.tamHeight{
+.principal{
   height: 88vh;
+  width: 100vw;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-direction: row;
   flex-wrap: wrap;
 }
-.content .left{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.esquerda{
+  width: 50vw;
+  height: 70vh;
 
-    text-align: justify;
+  gap: 3rem;
 
-    width: 50vw;
-    height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: justify;
 
-    border-right: 1px solid var(--corSecundaria);
+  padding: 10vw;
+
+  border-right: 1px solid var(--corSecundaria);
 }
-.content .contentLeft{
-    display: flex;
-    flex-direction: column;
-    width: 30vw;
-    gap: 3vh;
-}
-.content .left #title{
-    color: var(--corSecundaria);
-    font-size: 50px;
-}
-.content .left #text{
-    color: var(--corSecundaria);
-    font-size: 23px;
-}
-.content .btnContent{
-    width: 27vw;
-    height: 7vh;
-    border: 1px solid var(--corSecundaria);
-
-    background-color: white;
-    color: var(--corSecundaria);
-
-    font-size: 18px;
-
-    box-shadow: 5px 5px 4px rgb(129, 63, 206);
-
-    transition: width 1.1s;
-}
-.content .btnContent:hover{
-  background-color: var(--corSecundaria);
-  color: var(--corPrimaria);
-  width: 30vw;
-}
-.content .rigth{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: justify;
-
-    width: 50vw;
-    height: 60vh;
-
-    border-right: 1px solid var(--corSecundaria);
-}
-.adm{
+.direita{
+  width: 50vw;
+  
   display: flex;
   justify-content: center;
   align-items: center;
-
-  flex-direction: column;
-
-  gap: 3vh;
 }
-.btnModal{
-    width: 3rem;
-    height: 3rem;
-    border: 1px solid var(--corSecundaria);
+.button{
+  width: 27vw;
+  height: 6vh;
 
-    background-color: white;
-    color: var(--corSecundaria);
-
-    font-size: 30px;
-    font-weight: 300;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    box-shadow: 5px 5px 4px rgb(129, 63, 206);
-}
-.btnModal:hover{
-  background-color: var(--corSecundaria);
-  color: var(--corPrimaria);
-}
-form{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-direction: column;
-
-  gap: 3vh;
-}
-input{
-  width: 30vw;
-  height: 3.5vh;
-  outline: none;
-  border: 1px solid var(--corSecundaria);
-
-  padding: 10px;
-
-  transition: width 1s;
-}
-input:focus{
-  width: 35vw;
-}
-input::placeholder{
   color: var(--corSecundaria);
-  font-size: 17px;
-}
-.buttonForm{
-  width: 30vw;
-  height: 5.5vh;
+  background-color: var(--corPrimaria);
   border: 1px solid var(--corSecundaria);
-
-  background-color: white;
-  color: var(--corSecundaria);
-
-  font-size: 18px;
-
+  
   box-shadow: 5px 5px 4px rgb(129, 63, 206);
 
-  transition: width 1s;
+  transition: width 0.9s;
 }
-.buttonForm:hover{
-  background-color: var(--corSecundaria);
+.button:hover{
   color: var(--corPrimaria);
-  width: 35vw;
+  background-color: var(--corSecundaria);
+
+  width: 30vw;
 }
-.forms{
+
+/* CSS da adm */
+
+.administracao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.headerAdm{
+  height: 12vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 4vw;
+}
+.contentAdm{
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* CSS categoria e produtos */
+
+#categoria{
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+}
+#produto{
+  display: none;
+  flex-direction: column;
+
+  gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+}
+#optAdmProd{
+  color: var(--corSecundaria);
+
+  cursor: pointer;
+
+  padding: 1vh;
+}
+#optAdmCat{
+  color: var(--corSecundaria);
+
+  border-bottom: 3px solid var(--corSecundaria);
+
+  cursor: pointer;
+
+  padding: 1vh;
+}
+
+/* CSS tables */
+
+table{
+  width: 70vw;
+  border: 1px solid var(--corSecundaria);
+  box-shadow: 5px 5px 4px rgb(129, 63, 206);
+}
+table #th{
+  width: 25vw;
+  padding: 0.8rem;
+
+  color: var(--corPrimaria);
+  background-color: var(--corSecundaria);
+}
+table #td{
+  width: 16.6666667vw;
+  padding: 0.8rem;
+
+  color: var(--corSecundaria);
+
+  border-right: 1px solid var(--corSecundaria)
+}
+
+/* CSS form */
+
+.form{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  gap: 7vh;
-
-  margin-top: 10vh;
+  gap: 2rem;
 }
-form select{
-  width: 30vw;
-  height: 3.5vh;
+.form #titleForm{
+  color: var(--corSecundaria);
+}
+.input{
+  width: 66vw;
+  height: auto;
+
   outline: none;
+  padding: 7px;
+
   border: 1px solid var(--corSecundaria);
 
+  transition: width 0.7s;
+}
+.input:focus{
+  width: 70vw;
+}
+.input::placeholder{
   color: var(--corSecundaria);
+}
+input::file-selector-button {
+  width: 15vw;
 
-  transition: width 1s;
-}
-form select:focus{
-  width: 35vw;
-}
-#text{
   color: var(--corSecundaria);
+  background-color: var(--corPrimaria);
+  
+  padding: 0.5em;
+  
+  border: 1px solid var(--corSecundaria);
+
+  transition: width 0.7s;
+  cursor: pointer;
 }
+input::file-selector-button:hover{
+  width: 18vw;
+  color: var(--corPrimaria);
+  background-color: var(--corSecundaria);
+}
+.form .button{
+  width: 66vw;
+  transition: width 0.7s;
+}
+.form .button:hover{
+  width: 70vw;
+}
+.form select{
+  width: 66vw;
+  height: 3.5vh;
+
+  outline: none;
+  padding: 3px;
+
+  color: var(--corSecundaria);
+  border: 1px solid var(--corSecundaria);
+
+  transition: width 0.7s;
+}
+.form select:focus{
+  width: 70vw;
+}
+
+/* CSS do footer */
+
 .footer{
   display: flex;
   flex-direction: column;
@@ -243,127 +295,8 @@ form select:focus{
   justify-content: space-between;
   width: 12rem;
 }
-#labelForm{
-  font-size: 18px;
-  color: var(--corSecundaria);
-  font-weight: 400;
-}
-textarea{
-  resize: none;
-  width: 30vw;
-  height: 25vh;
-  padding: 1rem;
-
-  border: 1px solid var(--corSecundaria);
-
-  transition: width 1s;
-
-  outline: none;
-}
-textarea:focus{
-  width: 35vw;
-}
-textarea::placeholder{
-  color: var(--corSecundaria);
-  font-size: 17px;
-}
-#fileToUpload{
-  width: 30vw;
-  height: auto;
-  outline: none;
-  border: 1px solid var(--corSecundaria);
-
-  padding: 10px;
-
-  transition: width 1s;
-}
-#fileToUpload:focus{
-  width: 35vw;
-}
 #textFooter{
   font-family: 'Freehand', cursive;
   font-size: 30px;
   font-weight: 450;
-}
-.card1{
-  border: 1px solid var(--corSecundaria);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  width: 22rem;
-
-  gap: 0.5vh;
-  padding: 1rem;
-
-  margin-top: 1rem;
-}
-.editar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-direction: column;
-
-  gap: 3vh;
-}
-.formEdit select{
-  width: 20rem;
-  height: 3.5vh;
-  outline: none;
-  border: 1px solid var(--corSecundaria);
-
-  color: var(--corSecundaria);
-
-  transition: width 1s;
-}
-.formEdit select:focus{
-  width: 22rem;
-}
-.buttonFormEdit{
-  width: 20rem;
-  height: 5.5vh;
-  border: 1px solid var(--corSecundaria);
-
-  background-color: white;
-  color: var(--corSecundaria);
-
-  font-size: 18px;
-
-  box-shadow: 5px 5px 4px rgb(129, 63, 206);
-
-  transition: width 1s;
-}
-.buttonFormEdit:hover{
-  background-color: var(--corSecundaria);
-  color: var(--corPrimaria);
-  width: 22rem;
-}
-.formEdit{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-direction: column;
-
-  gap: 3vh;
-}
-.formEdit input{
-  width: 30vw;
-  height: 3.5vh;
-  outline: none;
-  border: 1px solid var(--corSecundaria);
-
-  padding: 10px;
-
-  transition: width 1s;
-}
-.formEdit input:focus{
-  width: 22rem;
-}
-.formEdit input::placeholder{
-  color: var(--corSecundaria);
-  font-size: 17px;
 }

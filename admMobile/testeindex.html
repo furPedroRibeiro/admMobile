@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Administração</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="testeStyle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -73,6 +73,9 @@
         </div>
       </div>
       <div class="administracao">
+        <div class="borboleta">
+          <img src="img/fundoEsquerda.png" alt="" width="400px" />
+        </div>
         <div class="headerAdm">
           <h3 id="optAdmCat" onclick="categoriaOpt()">Categorias</h3>
           <h3 id="optAdmProd" onclick="produtoOpt()">Produtos</h3>
@@ -93,36 +96,43 @@
                   Enviar
                 </button>
               </a>
+              <?php
+                if(isset($_POST['nomeCat'])){
+                    CadastrarCategoria($_POST['nomeCat']);
+                }
+              ?>
             </form>
             <table>
               <tr>
-                <th id="th" style="border-right: 1px solid var(--corPrimaria)">
+                <th
+                  id="thCat"
+                  style="border-right: 1px solid var(--corPrimaria)"
+                >
                   Código
                 </th>
-                <th id="th" style="border-right: 1px solid var(--corPrimaria)">
+                <th
+                  id="thCat"
+                  style="border-right: 1px solid var(--corPrimaria)"
+                >
                   Nome
                 </th>
-                <th id="th">Opções</th>
+                <th id="thCat">Opções</th>
               </tr>
-              <tr>
-                <td id="td">001</td>
-                <td id="td">Geek</td>
-                <td id="td">
-                  <a href="" style="text-decoration: none">
-                    <img src="img/lixeira.png" alt="" width="25px" />
-                  </a>
-                  <a href="" style="text-decoration: none">
-                    <img src="img/escrever.png" alt="" width="25px" />
-                  </a>
-                </td>
-              </tr>
+              <?php
+                MostrarCategoria();
+              ?>
             </table>
           </div>
           <div id="produto">
             <form action="" method="post" class="form">
               <h3 id="titleForm">Cadastrar produto</h3>
+              <label for="descProd" id="textDefault"
+                >Categoria do produto:</label
+              >
               <select name="selectCat" id="selectCat">
-                <option value="">Geek</option>
+                <?php
+                    MostrarCategoriaSelect();
+                ?>
               </select>
               <input
                 type="text"
@@ -163,37 +173,46 @@
                   Enviar
                 </button>
               </a>
+              <?php
+                $file = 'logo.png';
+                if(isset($_POST['nomeProd'])){
+                    CadastrarProduto($_POST['selectCat'], $_POST['descProd'], $file, $_POST['linkProd'], $_POST['nomeProd'], $_POST['valor']);
+                }
+              ?>
             </form>
             <table>
               <tr>
-                <th id="th" style="border-right: 1px solid var(--corPrimaria)">
+                <th
+                  id="thProd"
+                  style="border-right: 1px solid var(--corPrimaria)"
+                >
                   Código
                 </th>
-                <th id="th" style="border-right: 1px solid var(--corPrimaria)">
+                <th
+                  id="thProd"
+                  style="border-right: 1px solid var(--corPrimaria)"
+                >
                   Nome
                 </th>
-                <th id="th" style="border-right: 1px solid var(--corPrimaria)">
+                <th
+                  id="thProd"
+                  style="border-right: 1px solid var(--corPrimaria)"
+                >
                   Valor
                 </th>
-                <th id="th">Opções</th>
+                <th id="thProd">Opções</th>
               </tr>
-              <tr>
-                <td id="td">001</td>
-                <td id="td">Geek</td>
-                <td id="td">R$ 40,00</td>
-                <td id="td">
-                  <a href="" style="text-decoration: none">
-                    <img src="img/lixeira.png" alt="" width="25px" />
-                  </a>
-                  <a href="" style="text-decoration: none">
-                    <img src="img/escrever.png" alt="" width="25px" />
-                  </a>
-                </td>
-              </tr>
+              <?php
+                MostrarProduto();
+              ?>
             </table>
           </div>
         </div>
-        <div class="footerAdm"></div>
+        <div class="footerAdm">
+          <div class="borboleta2">
+            <img src="img/fundoEsquerda.png" alt="" width="400px" />
+          </div>
+        </div>
       </div>
     </div>
     <div class="footer">

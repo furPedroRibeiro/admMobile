@@ -1,0 +1,340 @@
+/* CSS geral */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+  color: var(--corSecundaria);
+}
+:root{
+  --corPrimaria: rgb(255, 255, 255);
+  --corSecundaria: rgb(139, 92, 192);
+  --fundo: rgba(179, 153, 209, 0.741);
+}
+#textDefault{
+  color: var(--corSecundaria);
+  font-size: 22px;
+  font-weight: 450;
+}
+#tituloDefault{
+  color: var(--corSecundaria);
+  font-size: 35px;
+  font-weight: 1000;
+}
+a {
+  text-decoration: none;
+  color: var(--corSecundaria);
+}
+
+/* CSS do header */
+
+.header {
+  background-color: white;
+  color: var(--corSecundaria);
+
+  height: 12vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .textLogo h3 a {
+  text-decoration: none;
+  color: var(--corSecundaria);
+}
+#textLogo {
+  font-family: 'Freehand', cursive;
+  font-size: 27px;
+  font-weight: 450;
+}
+
+/* CSS do content */
+
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.principal{
+  height: 88vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.esquerda{
+  width: 50vw;
+  height: 70vh;
+
+  gap: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: justify;
+
+  padding: 10vw;
+
+  border-right: 1px solid var(--corSecundaria);
+}
+.direita{
+  width: 50vw;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button{
+  width: 27vw;
+  height: 6vh;
+
+  color: var(--corPrimaria);
+  background-color: var(--corSecundaria);
+  border: 1px solid var(--corSecundaria);
+  
+  box-shadow: 5px 5px 4px rgb(129, 63, 206);
+
+  transition: width 0.9s;
+}
+.button:hover{
+  color: var(--corPrimaria);
+  background-color: var(--corSecundaria);
+
+  width: 30vw;
+}
+
+/* CSS da adm */
+
+.administracao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.headerAdm{
+  height: 12vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 4vw;
+}
+.contentAdm{
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* CSS categoria e produtos */
+.borboleta{
+  position: absolute;
+  margin-left: -60vw;
+  margin-top: -20vh;
+}
+.borboleta2{
+  position: absolute;
+  margin-left: 20vw;
+  margin-top: -20vh;
+}
+#categoria{
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+}
+#produto{
+  display: none;
+  flex-direction: column;
+
+  gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+}
+#optAdmProd{
+  color: var(--corSecundaria);
+
+  cursor: pointer;
+
+  padding: 1vh;
+}
+#optAdmCat{
+  color: var(--corSecundaria);
+
+  border-bottom: 3px solid var(--corSecundaria);
+
+  cursor: pointer;
+
+  padding: 1vh;
+}
+
+/* CSS tables */
+
+table{
+  width: 45vw;
+  border: 1px solid var(--corSecundaria);
+  box-shadow: 5px 5px 4px rgb(129, 63, 206);
+}
+table #thCat{
+  width: 15vw;
+  padding: 0.8rem;
+
+  color: var(--corPrimaria);
+  background-color: var(--fundo);
+}
+table #tdCat{
+  width: 15vw;
+  padding: 0.8rem;
+
+  color: var(--corSecundaria);
+
+  border-bottom: 1px solid var(--corSecundaria);
+  border-right: 1px solid var(--corSecundaria)
+}
+table #thProd{
+  width: 11.25vw;
+  padding: 0.8rem;
+
+  color: var(--corPrimaria);
+  background-color: var(--fundo);
+}
+table #tdProd{
+  width: 11.25vw;
+  padding: 0.8rem;
+
+  color: var(--corSecundaria);
+
+  border-bottom: 1px solid var(--corSecundaria);
+  border-right: 1px solid var(--corSecundaria)
+}
+
+/* CSS form */
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 2rem;
+}
+.form #titleForm{
+  color: var(--corSecundaria);
+}
+.input{
+  width: 41vw;
+  height: auto;
+
+  outline: none;
+  padding: 7px;
+
+  background-color: var(--fundo);
+  border: 1px solid var(--corSecundaria);
+
+  transition: width 0.7s;
+}
+.input:focus{
+  background-color: var(--corSecundaria);
+  width: 45vw;
+}
+.input::placeholder{
+  color: var(--corSecundaria);
+}
+.input:focus::placeholder{
+  color: var(--corPrimaria);
+}
+input::file-selector-button {
+  width: 10vw;
+
+  color: var(--corSecundaria);
+  background-color: var(--fundo);
+  
+  padding: 0.5em;
+  
+  border: 1px solid var(--corSecundaria);
+
+  transition: width 1s;
+  cursor: pointer;
+}
+input::file-selector-button:hover{
+  width: 13vw;
+  color: var(--corPrimaria);
+  background-color: var(--corSecundaria);
+}
+.form .button{
+  background-color: var(--corSecundaria);
+  color: var(--corPrimaria);
+
+  width: 41vw;
+  transition: width 0.7s;
+}
+.form .button:hover{
+  width: 45vw;
+  background-color: var(--corPrimaria);
+  color: var(--corSecundaria);
+}
+.form select{
+  width: 41vw;
+  height: 3.5vh;
+
+  outline: none;
+  padding: 3px;
+
+  background-color: var(--fundo);
+  color: var(--corSecundaria);
+  border: 1px solid var(--corSecundaria);
+
+  transition: width 0.7s;
+}
+.form select:focus{
+  width: 45vw;
+}
+
+/* CSS do footer */
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  width: 100vw;
+  gap: 2vh;
+  padding: 2rem;
+}
+
+.footer #textFooter{
+  color: var(--corSecundaria);
+  font-weight: 450;
+}
+.footer .icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 12rem;
+}
+#textFooter{
+  font-family: 'Freehand', cursive;
+  font-size: 30px;
+  font-weight: 450;
+}

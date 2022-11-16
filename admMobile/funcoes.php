@@ -9,16 +9,24 @@ session_start();
     echo "Erro de conexão ".$conn->error;
   }
   /* Funções realizadas pelo administrador */
+  function redirect($text){
+    header("refresh: 0.1 , url = index.php");
+    echo '
+      <script>
+        alert("'.$text.'")
+      </script>
+    ';
+  }
   function CadastrarCategoria($name){
     $sql = 'INSERT INTO categoria VALUES (null, "'.$name.'")';
     $res = $GLOBALS['conn']->query($sql);
 
     if($res){
-      echo '<h3 id="removeu" class="textDefault">Categoria cadastrada com sucesso(o site será atualizado em 7 segundos)</h3>';
-        $_SESSION['redirect'] = 1;
+      $text = 'Categoria cadastrada com sucesso!!!';
+      redirect($text);
     } else{
-      echo '<h3 id="removeu" class="textDefault">Erro ao cadastrar categoria(o site será atualizado em 7 segundos)</h3>';
-        $_SESSION['redirect'] = 1;
+      $text = 'Erro ao cadastrar categoria!!!';
+      redirect($text);
     }
   }
   function EditarCategoria($name, $cat){
@@ -26,11 +34,11 @@ session_start();
     $res = $GLOBALS['conn']->query($sql);
 
     if($res){
-      echo '<h3 class="textDefault">Categoria editada com sucesso(o site será atualizado em 7 segundos)</h3>';
-      $_SESSION['redirect'] = 1;
+      $text = 'Categoria editada com sucesso!!!';
+      redirect($text);
     } else{
-      echo '<h3 class="textDefault">Categoria não foi editada(o site será atualizado em 7 segundos)</h3>';
-      $_SESSION['redirect'] = 1;
+      $text = 'Erro ao editar categoria!!!';
+      redirect($text);
     }
   }
   function MostrarCategoria(){
@@ -107,22 +115,22 @@ session_start();
       $sql = 'DELETE FROM categoria WHERE cd ='.$cd;
       $res = $res = $GLOBALS['conn']->query($sql);
       if($res){
-        echo '<h3 class="textDefault">Categoria excluída com sucesso(o site será atualizado em 7 segundos)</h3>';
-        $_SESSION['redirect'] = 1;
+        $text = 'Categoria excluída com sucesso!!!';
+        redirect($text);
       } else{
-        echo '<h3 class="textDefault">Categoria não foi excluída com sucesso(o site será atualizado em 7 segundos)</h3>';
-        $_SESSION['redirect'] = 1;
+        $text = 'Erro ao excluir categoria!!!';
+        redirect($text);
       }
   }
   function CadastrarProduto($cdCat, $descProd, $imagem, $link, $nome, $valor){
     $sql = 'INSERT INTO produto(cd_categoria, cd_produto, ds_produto, imagem, link, nome, valor) VALUES ("'.$cdCat.'", null, "'.$descProd.'", "'.$imagem.'", "'.$link.'", "'.$nome.'", "'.$valor.'")';
     $res = $GLOBALS['conn']->query($sql);
     if($res){
-      echo '<h3 id="textDefault">Produto cadastrado com sucesso!!!(o site será atualizado em 7 segundos)</h3>';
-      $_SESSION['redirect'] = 1;
+      $text = 'Produto cadastrado com sucesso!!!';
+      redirect($text);
     } else{
-      echo '<h3 id="textDefault">Erro ao cadastrar produto!!!(o site será atualizado em 7 segundos)</h3>';
-      $_SESSION['redirect'] = 1;
+      $text = 'Erro ao cadastrar produto!!!';
+      redirect($text);
     }
   }
   function MostrarProduto(){
@@ -190,14 +198,14 @@ session_start();
     $sql = 'DELETE FROM produto WHERE cd_produto ='.$cd;
     $res = $GLOBALS['conn']->query($sql);
     if($res){
-      echo '<h3 id="removeu" class="textDefault">Produto excluído com sucesso(a página será atualizada em 7 segundos)</h3>';
-      $_SESSION['redirect'] = 1;
+      $text = 'Produto excluído com sucesso!!!';
+      redirect($text);
     } else{
-      echo '<h3 id="removeu" class="textDefault">Produto não foi excluído com sucesso(o site será atualizado em 7 segundos)</h3>';
-      $_SESSION['redirect'] = 1;
+      $text = 'Erro ao excluir produto!!!';
+      redirect($text);
     }
-}
-  function JsonCategoria(){
+  }
+  /*function JsonCategoria(){
     $sql = 'SELECT * FROM categoria';
     $res = $GLOBALS['conn']->query($sql);
 
@@ -210,5 +218,5 @@ session_start();
         echo $myJSON;
       }
     }
-  }
+  }*/
 ?>

@@ -1,9 +1,22 @@
 <?php
     include('funcoes.php');
-    if($_SESSION['redirect'] == 1){
-      header("Refresh: 7 ; url = index.php");
-    }
 ?>
+<?php
+  if(isset($_POST['nomeCat'])){
+    CadastrarCategoria($_POST['nomeCat']);
+  }
+?>
+<?php
+                if(isset($_POST['nomeEditCat'])){
+                    EditarCategoria($_POST['nomeEditCat'], $_POST['selectCat']);
+                }
+              ?>
+              <?php
+                $file = 'logo.png';
+                if(isset($_POST['nomeProd'])){
+                    CadastrarProduto($_POST['selectCat'], $_POST['descProd'], $file, $_POST['linkProd'], $_POST['nomeProd'], $_POST['valor']);
+                }
+              ?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -163,7 +176,7 @@ a {
 .borboleta{
   position: absolute;
   margin-left: -70vw;
-  margin-top: -60vh;
+  margin-top: -25vh;
 }/*
 .borboleta2{
   position: absolute;
@@ -457,11 +470,6 @@ input::file-selector-button:hover{
                   Enviar
                 </button>
               </a>
-              <?php
-                if(isset($_POST['nomeCat'])){
-                    CadastrarCategoria($_POST['nomeCat']);
-                }
-              ?>
             </form>
             <div id="editar">
             <form action="" method="post" class="form">
@@ -483,11 +491,6 @@ input::file-selector-button:hover{
                   Enviar
                 </button>
               </a>
-              <?php
-                if(isset($_POST['nomeEditCat'])){
-                    EditarCategoria($_POST['nomeEditCat'], $_POST['selectCat']);
-                }
-              ?>
             </form>
             </div>
             <table>
@@ -561,12 +564,6 @@ input::file-selector-button:hover{
                   Enviar
                 </button>
               </a>
-              <?php
-                $file = 'logo.png';
-                if(isset($_POST['nomeProd'])){
-                    CadastrarProduto($_POST['selectCat'], $_POST['descProd'], $file, $_POST['linkProd'], $_POST['nomeProd'], $_POST['valor']);
-                }
-              ?>
               <h3 id="removeuProd" class="textDefault"></h3>
             </form>
             <table>

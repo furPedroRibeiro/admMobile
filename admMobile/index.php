@@ -173,16 +173,16 @@ a {
 }
 
 /* CSS categoria e produtos */
-.borboleta{
+.imgDecoracao{
   position: absolute;
   margin-left: -70vw;
   margin-top: -25vh;
-}/*
-.borboleta2{
+}
+.imgDecoracao2{
   position: absolute;
   margin-left: 26vw;
   margin-top: -20vh;
-}*/
+}
 #categoria{
   display: flex;
   flex-direction: column;
@@ -447,8 +447,8 @@ input::file-selector-button:hover{
         </div>
       </div>
       <div class="administracao">
-        <div class="borboleta">
-          <img src="img/fundoEsquerda.png" alt="" width="400px" />
+        <div class="imgDecoracao">
+          <img src="img/danger.png" alt="" width="400px" />
         </div>
         <div class="headerAdm">
           <h3 id="optAdmCat" onclick="categoriaOpt()">Categorias</h3>
@@ -595,11 +595,9 @@ input::file-selector-button:hover{
           </div>
         </div>
         <div class="footerAdm">
-        <!-- 
-        <div class="borboleta2">
-          <img src="img/fundoEsquerda.png" alt="" width="400px" />
+        <div class="imgDecoracao2">
+          <img src="img/danger.png" alt="" width="400px" />
         </div>
-        -->
         </div>
       </div>
     </div>

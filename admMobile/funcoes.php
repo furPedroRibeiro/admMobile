@@ -79,9 +79,6 @@ session_start();
         ';
         }
       }
-      if(isset($_GET['removeCat'])){
-        ExcluirCategoria($_GET['removeCat'], $_GET['nomeCat']);
-      }
     } else{
       echo '
               <tr>
@@ -118,7 +115,7 @@ session_start();
         $text = 'Categoria excluída com sucesso!!!';
         redirect($text);
       } else{
-        $text = 'Erro ao excluir categoria!!!';
+        $text = 'Erro ao excluir categoria(verifique se há produtos utilizando)!!!';
         redirect($text);
       }
   }
@@ -172,9 +169,6 @@ session_start();
               </tr>
         ';
         }
-      }
-      if(isset($_GET['removeProd'])){
-        ExcluirProduto($_GET['removeProd'], $_GET['nomeProd']);
       }
     } else{
       echo '

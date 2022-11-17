@@ -7,16 +7,24 @@
   }
 ?>
 <?php
-                if(isset($_POST['nomeEditCat'])){
-                    EditarCategoria($_POST['nomeEditCat'], $_POST['selectCat']);
-                }
-              ?>
-              <?php
-                $file = 'logo.png';
-                if(isset($_POST['nomeProd'])){
-                    CadastrarProduto($_POST['selectCat'], $_POST['descProd'], $file, $_POST['linkProd'], $_POST['nomeProd'], $_POST['valor']);
-                }
-              ?>
+  if(isset($_POST['nomeEditCat'])){
+    EditarCategoria($_POST['nomeEditCat'], $_POST['selectCat']);
+  }
+?>
+<?php
+  $file = 'logo.png';
+  if(isset($_POST['nomeProd'])){
+    CadastrarProduto($_POST['selectCat'], $_POST['descProd'], $file, $_POST['linkProd'], $_POST['nomeProd'], $_POST['valor']);
+  }
+?>
+<?php
+  if(isset($_GET['removeCat'])){
+    ExcluirCategoria($_GET['removeCat'], $_GET['nomeCat']);
+  }
+  if(isset($_GET['removeProd'])){
+    ExcluirProduto($_GET['removeProd'], $_GET['nomeProd']);
+  }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -87,6 +95,12 @@ a {
 
 /* CSS do content */
 
+#alertas{
+  color: var(--corPrimaria);
+  background-color: var(--corSecundaria);
+
+  padding: 0.7rem;
+}
 .content{
   display: flex;
   justify-content: center;
@@ -434,6 +448,7 @@ input::file-selector-button:hover{
     <div class="content">
       <div class="principal">
         <div class="esquerda">
+          <h2 id="alertas">Aqui seram exibidos alertas !!!</h2>
           <h2 id="tituloDefault">Bem vindo</h2>
           <h3 id="textDefault">
             ao sistema de administração Pedro arT, administre com sabedoria.
